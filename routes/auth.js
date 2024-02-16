@@ -21,6 +21,7 @@ router.post('/signup',(req,res)=>{
        return  res.status(422).json({error:'please enter valid email and password'})
     }
 
+
         User.findOne({email:email})
         .then((savedUser) => {
             if(savedUser){
