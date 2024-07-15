@@ -27,7 +27,7 @@ router.get("/allposts", requireLogin, async (req, res) => {
 
 router.post("/createpost", requireLogin, (req, res) => {
   const { title, body, pic } = req.body;
-  if (!title || !pic || !body) {
+  if (!title || !pic) {
     return res.status(400).json({ error: "please provide all the fields" });
   }
   const post = new Post({
