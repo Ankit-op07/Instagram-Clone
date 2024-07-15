@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
-const {JWT_SECRET} = require('../config/Keys');
+// const {JWT_SECRET} = require('../config/Keys');
 const requireLogin = require('../middleware/requireLogin');
 const emailvalidator = require("email-validator");
 
@@ -12,7 +12,7 @@ const emailvalidator = require("email-validator");
 // router.get('/protected',requireLogin,(req,res)=>{
 //     res.send('hello')
 // })
-
+const JWT_SECRET = 'opbolte'
 router.post('/signup',(req,res)=>{
     //  console.log(req.body.name)
     const {name,email,password} = req.body;
